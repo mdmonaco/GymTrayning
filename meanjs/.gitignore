@@ -45,6 +45,7 @@ _site/
 *.tmp
 *.bak
 *.swp
+*.json
 logs/
 build/
 
