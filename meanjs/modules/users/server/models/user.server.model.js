@@ -87,6 +87,11 @@ var UserSchema = new Schema({
     lowercase: true,
     trim: true
   },
+  dni: {
+    type: String,
+    unique: 'El DNI ingresado ya existe',
+    required: 'Por favor complete el DNI'
+  },
   password: {
     type: String,
     default: ''
