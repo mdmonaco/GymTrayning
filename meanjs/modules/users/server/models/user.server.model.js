@@ -93,11 +93,14 @@ var UserSchema = new Schema({
     required: 'Por favor complete el DNI'
   },
   phone: {
-    type: String,
+    type: String
   },
   birDate: {
-    type: Date,
+    type: Date
   },
+  gender:  {
+    type: String
+  }, 
   password: {
     type: String,
     default: ''

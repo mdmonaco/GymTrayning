@@ -23,6 +23,7 @@ exports.renderIndex = function (req, res) {
       dni: req.user.dni,
       phone: req.user.phone,
       birDate: req.user.birDate,
+      gender: req.user.gender,
       additionalProvidersData: req.user.additionalProvidersData
     };
   }
