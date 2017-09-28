@@ -17,6 +17,7 @@
     vm.callOauthProvider = callOauthProvider;
     vm.usernameRegex = /^(?=[\w.-]+$)(?!.*[._-]{2})(?!\.)(?!.*\.$).{3,34}$/;
     vm.dniRegex = /^[0-9]{8}$/;
+    vm.phoneRegex = /^([0-9]{4})([-]{1})([0-9]{4}$)/;  
 
     // Get an eventual error defined in the URL query string:
     if ($location.search().err) {

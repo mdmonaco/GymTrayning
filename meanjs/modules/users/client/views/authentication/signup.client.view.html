@@ -40,7 +40,21 @@
             <p class="help-block error-text" ng-message="required">El DNI es requerido.</p>
             <p class="help-block error-text" ng-message="pattern">El numero de documento no es correcto, por favor ingrese un numero de documento valido</p>
           </div>
-        </div>      
+        </div>
+        <div class="form-group" show-errors>
+          <label for="phone">Telefono</label>
+          <input type="text" id="phone" name="phone" class="form-control" ng-model="vm.credentials.phone" ng-pattern="vm.phoneRegex" placeholder="telefono" size= lowercase>
+          <div ng-messages="vm.userForm.phone.$error" role="alert">
+            <p class="help-block error-text" ng-message="pattern">El numero de telefono no es valido. Ej:0358-15245254</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label for="birDate">Fecha Nacimiento</label>
+          <input type="date" id="dateBir" name="birDate" class="form-control" ng-model="vm.credentials.birDate" size= lowercase required>
+          <div ng-messages="vm.userForm.birDate.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">La Fecha de Nacimiento es requerida.</p>
+          </div>
+        </div>    
         <div class="form-group" show-errors>
           <label for="password">Contraseña</label>
             <input type="password" id="password" name="password" class="form-control" ng-model="vm.credentials.password" placeholder="contraseña" uib-popover="{{vm.getPopoverMsg()}}" popover-trigger="outsideClick" password-validator required>

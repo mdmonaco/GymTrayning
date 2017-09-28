@@ -13,6 +13,7 @@
     vm.user = Authentication.user;
     vm.updateUserProfile = updateUserProfile;
     vm.dniRegex = /^[0-9]{8}$/;
+    vm.phoneRegex = /^([0-9]{4})([-]{1})([0-9]{4}$)/;  
 
     // Update a user profile
     function updateUserProfile(isValid) {

@@ -92,6 +92,12 @@ var UserSchema = new Schema({
     unique: 'El DNI ingresado ya existe',
     required: 'Por favor complete el DNI'
   },
+  phone: {
+    type: String,
+  },
+  birDate: {
+    type: Date,
+  },
   password: {
     type: String,
     default: ''
