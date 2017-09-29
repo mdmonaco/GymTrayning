@@ -11,6 +11,7 @@
     var vm = this;
 
     vm.user = Authentication.user;
+    vm.user.birDate = new Date(vm.user.birDate)
     vm.updateUserProfile = updateUserProfile;
     vm.dniRegex = /^[0-9]{8}$/;
     vm.phoneRegex = /^([0-9]{4})([-]{1})([0-9]{4}$)/;
