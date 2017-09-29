@@ -100,7 +100,10 @@ var UserSchema = new Schema({
   },
   gender:  {
     type: String
-  }, 
+  },
+  discipline:  {
+    type: String
+  },
   password: {
     type: String,
     default: ''

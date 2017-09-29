@@ -29,6 +29,7 @@ exports.update = function (req, res) {
   user.dni = req.body.dni;
   user.phone = req.body.phone;
   user.birDate = req.body.birDate;
+  user.discipline = req.body.discipline;
 
   user.save(function (err) {
     if (err) {
