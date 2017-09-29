@@ -58,11 +58,11 @@
         <div class="form-group" show-errors>
           <label for="gender">Sexo</label></br>
           <form action="">
-            <input type="radio" id="gender" name="gender" ng-model="vm.user.gender" value="hombre">Hombre<br>
-             <input type="radio" id="gender" name="gender" ng-model="vm.user.gender" value="Mujer">Mujer<br>
+            <input type="radio" id="gender" name="gender" ng-model="vm.user.gender" value="hombre" required>Hombre<br>
+             <input type="radio" id="gender" name="gender" ng-model="vm.user.gender" value="Mujer" required>Mujer<br>
           </form>
-          <div ng-messages="vm.userForm.birDate.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">La Fecha de Nacimiento es requerida.</p>
+          <div ng-messages="vm.userForm.gender.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">El sexo es requerido.</p>
           </div>
         </div>
         <div class="form-group" show-errors>
@@ -73,8 +73,8 @@
             <option value="3">3</option>
             <option value="4">4</option>
           </select>
-          <div ng-messages="vm.userForm.birDate.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">La Fecha de Nacimiento es requerida.</p>
+          <div ng-messages="vm.userForm.discipline.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">La disciplina es requerida.</p>
           </div>
         </div>   
         <div class="text-center form-group">
