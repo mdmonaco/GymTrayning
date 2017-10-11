@@ -39,6 +39,11 @@
       signin: {
         method: 'POST',
         url: '/api/auth/signin'
+      },
+      articles: {
+        method: 'GET',
+        url: '/api/articles',
+        isArray: true
       }
     });
 
@@ -64,6 +69,9 @@
       },
       userSignin: function (credentials) {
         return this.signin(credentials).$promise;
+      },
+      getArticles: function (arts) {
+        return this.articles(arts).$promise;
       }
     });
 

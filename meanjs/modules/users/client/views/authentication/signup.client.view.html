@@ -79,10 +79,7 @@
           <label for="discipline">Diciplina</label>
           <select name="discipline" id="discipline" name="discipline" class="form-control" ng-model="vm.credentials.discipline" size= lowercase required>
             <option value="">--- Seleccionar ---</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
+            <option ng-repeat="article in vm.articles" value="article.title">{{article.title}}</option>
           </select>
           <div ng-messages="vm.userForm.discipline.$error" role="alert">
             <p class="help-block error-text" ng-message="required">La disciplina es requerida.</p>

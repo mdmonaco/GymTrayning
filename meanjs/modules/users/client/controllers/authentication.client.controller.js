@@ -18,6 +18,17 @@
     vm.usernameRegex = /^(?=[\w.-]+$)(?!.*[._-]{2})(?!\.)(?!.*\.$).{3,34}$/;
     vm.dniRegex = /^[0-9]{8}$/;
     vm.phoneRegex = /^([0-9]{4})([-]{1})([0-9]{4}$)/;
+    vm.articles = init();
+
+    function init() {
+      //vm.articles = [{title: 'hola'}, {title: 'chau'}];
+      UsersService.getArticles()
+        .then(function (response) {
+          vm.articles = response;
+        }, function (error) {
+        });
+    }
+
 
     // Get an eventual error defined in the URL query string:
     if ($location.search().err) {
