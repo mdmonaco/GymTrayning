@@ -98,11 +98,12 @@ var UserSchema = new Schema({
   birDate: {
     type: Date
   },
-  gender:  {
+  gender: {
     type: String
   },
-  discipline:  {
-    type: String
+  discipline: {
+    type: Schema.ObjectId,
+    ref: 'Article'
   },
   password: {
     type: String,

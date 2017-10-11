@@ -26,8 +26,6 @@ exports.signup = function (req, res) {
   var user = new User(req.body);
   user.provider = 'local';
   user.displayName = user.firstName + ' ' + user.lastName;
-  
-
   // Then save the user
   user.save(function (err) {
     if (err) {
