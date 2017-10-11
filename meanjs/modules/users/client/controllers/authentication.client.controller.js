@@ -21,7 +21,6 @@
     vm.disciplines = getDisciplines();
 
     function getDisciplines() {
-      //vm.articles = [{title: 'hola'}, {title: 'chau'}];
       UsersService.getArticles()
         .then(function (response) {
           vm.disciplines = response;

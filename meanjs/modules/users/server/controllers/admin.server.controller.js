@@ -6,6 +6,7 @@
 var path = require('path'),
   mongoose = require('mongoose'),
   User = mongoose.model('User'),
+  Article = mongoose.model('Article'),
   errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller'));
 
 /**
@@ -20,6 +21,8 @@ exports.read = function (req, res) {
  */
 exports.update = function (req, res) {
   var user = req.model;
+  user.discipline = new Article(req.body.discipline);
+
 
   // For security purposes only merge these parameters
   user.firstName = req.body.firstName;
@@ -29,7 +32,7 @@ exports.update = function (req, res) {
   user.dni = req.body.dni;
   user.phone = req.body.phone;
   user.birDate = req.body.birDate;
-  user.discipline = req.body.discipline;
+  //user.discipline = req.body.discipline;
 
   user.save(function (err) {
     if (err) {
