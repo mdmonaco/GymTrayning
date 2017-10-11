@@ -18,13 +18,13 @@
     vm.usernameRegex = /^(?=[\w.-]+$)(?!.*[._-]{2})(?!\.)(?!.*\.$).{3,34}$/;
     vm.dniRegex = /^[0-9]{8}$/;
     vm.phoneRegex = /^([0-9]{4})([-]{1})([0-9]{4}$)/;
-    vm.articles = init();
+    vm.disciplines = getDisciplines();
 
-    function init() {
+    function getDisciplines() {
       //vm.articles = [{title: 'hola'}, {title: 'chau'}];
       UsersService.getArticles()
         .then(function (response) {
-          vm.articles = response;
+          vm.disciplines = response;
         }, function (error) {
         });
     }
