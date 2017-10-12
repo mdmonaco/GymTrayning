@@ -105,6 +105,10 @@ var UserSchema = new Schema({
     type: Schema.ObjectId,
     ref: 'Article'
   },
+  age: {
+    type: String,
+    default: 0
+  },
   password: {
     type: String,
     default: ''

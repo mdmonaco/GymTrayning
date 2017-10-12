@@ -15,6 +15,19 @@ var _ = require('lodash'),
 
 var whitelistedFields = ['firstName', 'lastName', 'email', 'username', 'dni', 'phone', 'birDate', 'gender', 'discipline'];
 
+// Calculate Age
+function getAge(dateString) {
+    var today = new Date();
+    var birthDate = new Date(dateString);
+    var age = today.getFullYear() - birthDate.getFullYear();
+    var m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+    }
+    return age;
+}
+
+
 /**
  * Update user details
  */
@@ -22,10 +35,12 @@ exports.update = function (req, res) {
   // Init Variables
   var user = req.user;
 
+
   if (user) {
     // Update whitelisted fields only
     user = _.extend(user, _.pick(req.body, whitelistedFields));
 
+    user.age = getAge(user.birDate);
     user.updated = Date.now();
     user.displayName = user.firstName + ' ' + user.lastName;
 
