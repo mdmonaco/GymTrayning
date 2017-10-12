@@ -43,10 +43,7 @@
         </div>
         <div class="form-group" show-errors>
           <label for="phone">Telefono</label>
-          <input type="text" id="phone" name="phone" class="form-control" ng-model="vm.credentials.phone" ng-pattern="vm.phoneRegex" placeholder="telefono" size= lowercase>
-          <div ng-messages="vm.userForm.phone.$error" role="alert">
-            <p class="help-block error-text" ng-message="pattern">El numero de telefono no es valido. Ej:0358-15245254</p>
-          </div>
+          <input type="text" id="phone" name="phone" class="form-control" ng-model="vm.credentials.phone" placeholder="telefono" size= lowercase>
         </div>
         <div class="form-group" show-errors>
           <label for="birDate">Fecha Nacimiento</label>
