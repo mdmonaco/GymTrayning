@@ -28,6 +28,10 @@ var ArticleSchema = new Schema({
     default: '',
     trim: true
   },
+  price: {
+    type: String,
+    default: 0
+  },
   user: {
     type: Schema.ObjectId,
     ref: 'User'

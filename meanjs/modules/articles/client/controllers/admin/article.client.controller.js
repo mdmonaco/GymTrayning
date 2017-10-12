@@ -15,6 +15,7 @@
     vm.form = {};
     vm.remove = remove;
     vm.save = save;
+    vm.priceRegex = (/^[0-9]{3}$/);
 
     // Remove existing Article
     function remove() {
