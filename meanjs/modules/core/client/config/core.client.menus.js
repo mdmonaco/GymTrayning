@@ -20,23 +20,23 @@
     });
 
     menuService.addSubMenuItem('account', 'settings', {
-      title: 'Edit Profile',
+      title: 'Editar perfil',
       state: 'settings.profile'
     });
 
-    menuService.addSubMenuItem('account', 'settings', {
+    /*menuService.addSubMenuItem('account', 'settings', {
       title: 'Edit Profile Picture',
       state: 'settings.picture'
-    });
+    });*/
 
     menuService.addSubMenuItem('account', 'settings', {
-      title: 'Change Password',
+      title: 'Cambiar contraseña',
       state: 'settings.password'
     });
 
-    menuService.addSubMenuItem('account', 'settings', {
+    /*menuService.addSubMenuItem('account', 'settings', {
       title: 'Manage Social Accounts',
       state: 'settings.accounts'
-    });
+    });*/
   }
 }());

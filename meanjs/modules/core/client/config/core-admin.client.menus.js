@@ -9,7 +9,7 @@
 
   function menuConfig(menuService) {
     menuService.addMenuItem('topbar', {
-      title: 'Admin',
+      title: 'Admiministrar',
       state: 'admin',
       type: 'dropdown',
       roles: ['admin']
