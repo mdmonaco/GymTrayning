@@ -21,7 +21,7 @@ exports.read = function (req, res) {
  */
 exports.update = function (req, res) {
   var user = req.model;
-  user.discipline = new Article(req.body.discipline);
+  //user.discipline = new Article(req.body.discipline);
 
 
   // For security purposes only merge these parameters
