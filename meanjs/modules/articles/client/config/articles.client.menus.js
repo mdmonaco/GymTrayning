@@ -12,14 +12,14 @@
       title: 'Disciplina',
       state: 'articles',
       type: 'dropdown',
-      roles: ['*']
+      roles: ['user','admin']
     });
 
     // Add the dropdown list item
     menuService.addSubMenuItem('topbar', 'articles', {
       title: 'Listar Disciplinas',
       state: 'articles.list',
-      roles: ['*']
+      roles: ['user','admin']
     });
   }
 }());
