@@ -44,6 +44,10 @@
         method: 'GET',
         url: '/api/articles',
         isArray: true
+      },
+      create: {
+        method: 'POST',
+        url: '/api/auth/signup'
       }
     });
 
@@ -72,6 +76,9 @@
       },
       getArticles: function (arts) {
         return this.articles(arts).$promise;
+      },
+      userCreate: function (credentials) {
+        return this.signup(credentials).$promise;
       }
     });
 

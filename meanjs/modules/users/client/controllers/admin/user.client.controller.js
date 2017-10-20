@@ -16,6 +16,8 @@
     vm.update = update;
     vm.isContextUserSelf = isContextUserSelf;
 
+
+
     function remove(user) {
       if ($window.confirm('Are you sure you want to delete this user?')) {
         if (user) {

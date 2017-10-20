@@ -39,6 +39,12 @@
         data: {
           pageTitle: '{{ userResolve.displayName }}'
         }
+      })
+      .state('admin.user-create', {
+        url: '/create',
+        templateUrl: '/modules/users/client/views/admin/create-users.client.view.html',
+        controller: 'CreateUsersController',
+        controllerAs: 'vm',
       });
 
     getUser.$inject = ['$stateParams', 'AdminService'];
