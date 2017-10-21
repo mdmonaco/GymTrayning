@@ -32,7 +32,7 @@ function getAge(dateString) {
  */
 exports.signup = function (req, res) {
   // For security measurement we remove the roles from the req.body object
-  delete req.body.roles;
+   // delete req.body.roles;
   // Init user and add missing fields
   var user = new User(req.body);
   var stringDate = new Date(user.birDate) 
@@ -48,10 +48,11 @@ exports.signup = function (req, res) {
         message: errorHandler.getErrorMessage(err)
       });
     } else {
+      res.json(user);
       // Remove sensitive data before login
       user.password = undefined;
       user.salt = undefined;
-
+      /**
       req.login(user, function (err) {
         if (err) {
           res.status(400).send(err);
@@ -59,6 +60,7 @@ exports.signup = function (req, res) {
           res.json(user);
         }
       });
+      */
     }
   });
 };
