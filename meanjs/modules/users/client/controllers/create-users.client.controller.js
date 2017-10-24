@@ -19,9 +19,7 @@
     vm.dniRegex = /^[0-9]{8}$/;
     vm.disciplines = getDisciplines();
 
-    var temp = Authentication.user;
-
-
+  
 
     function getDisciplines() {
       UsersService.getArticles()

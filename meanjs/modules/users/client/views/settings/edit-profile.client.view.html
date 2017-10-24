@@ -64,7 +64,7 @@
         </div>
         <div class="form-group" show-errors>
           <label for="discipline">Diciplina</label>
-          <select name="discipline" id="discipline" name="discipline" class="form-control" ng-model="vm.user.discipline" size= lowercase required>
+          <select name="discipline" id="discipline" class="form-control" ng-model="vm.user.discipline" size= lowercase required>
             <option ng-repeat="disc in vm.disciplines" value="{{disc._id}}">{{disc.title}}</option>
           </select>
           <div ng-messages="vm.userForm.discipline.$error" role="alert">

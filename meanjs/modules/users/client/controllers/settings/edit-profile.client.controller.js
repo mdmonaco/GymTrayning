@@ -16,6 +16,8 @@
     vm.dniRegex = /^[0-9]{8}$/;
     vm.disciplines = getDisciplines();
 
+    
+
     function getDisciplines() {
       UsersService.getArticles()
         .then(function (response) {
