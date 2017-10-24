@@ -11,7 +11,8 @@ var mongoose = require('mongoose'),
   validator = require('validator'),
   generatePassword = require('generate-password'),
   owasp = require('owasp-password-strength-test'),
-  chalk = require('chalk');
+  chalk = require('chalk'),
+  possibleRoles = ['admin', 'user', 'client'];
 
 owasp.config(config.shared.owasp);
 
@@ -129,7 +130,7 @@ var UserSchema = new Schema({
   roles: {
     type: [{
       type: String,
-      enum: ['user', 'admin', 'client']
+      enum: possibleRoles
     }],
     default: ['user'],
     required: 'Please provide at least one role'
