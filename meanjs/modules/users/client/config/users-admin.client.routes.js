@@ -44,7 +44,7 @@
         url: '/create',
         templateUrl: '/modules/users/client/views/admin/create-users.client.view.html',
         controller: 'CreateUsersController',
-        controllerAs: 'vm',
+        controllerAs: 'vm'
       });
 
     getUser.$inject = ['$stateParams', 'AdminService'];

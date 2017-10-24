@@ -1,4 +1,4 @@
-(function() {
+(function () {
   'use strict';
 
   angular
@@ -18,7 +18,6 @@
     vm.usernameRegex = /^(?=[\w.-]+$)(?!.*[._-]{2})(?!\.)(?!.*\.$).{3,34}$/;
     vm.dniRegex = /^[0-9]{8}$/;
     vm.disciplines = getDisciplines();
-
   
 
     function getDisciplines() {
@@ -46,7 +45,7 @@
 
     function onUserSignupSuccess(response) {
       // If successful we assign the response to the global user model
-      //vm.authentication.user = response;
+      // vm.authentication.user = response;
       Notification.success({ message: '<i class="glyphicon glyphicon-ok"></i> Usuario ' + response.displayName +  ' creado!' });
       // And redirect to the previous or home page
       $state.go($state.previous.state.name || 'home', $state.previous.params);

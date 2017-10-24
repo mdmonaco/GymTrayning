@@ -24,7 +24,7 @@
       state: 'settings.profile'
     });
 
-    /*menuService.addSubMenuItem('account', 'settings', {
+    /* menuService.addSubMenuItem('account', 'settings', {
       title: 'Edit Profile Picture',
       state: 'settings.picture'
     });*/
@@ -34,7 +34,7 @@
       state: 'settings.password'
     });
 
-    /*menuService.addSubMenuItem('account', 'settings', {
+    /* menuService.addSubMenuItem('account', 'settings', {
       title: 'Manage Social Accounts',
       state: 'settings.accounts'
     });*/

@@ -17,14 +17,14 @@ var noReturnUrls = [
 
 // Calculate Age
 function getAge(dateString) {
-    var today = new Date();
-    var birthDate = new Date(dateString);
-    var age = today.getFullYear() - birthDate.getFullYear();
-    var m = today.getMonth() - birthDate.getMonth();
-    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-        age--;
-    }
-    return age;
+  var today = new Date();
+  var birthDate = new Date(dateString);
+  var age = today.getFullYear() - birthDate.getFullYear();
+  var m = today.getMonth() - birthDate.getMonth();
+  if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+    age--;
+  }
+  return age;
 }
 
 /**
@@ -35,7 +35,7 @@ exports.signup = function (req, res) {
    // delete req.body.roles;
   // Init user and add missing fields
   var user = new User(req.body);
-  var stringDate = new Date(user.birDate) 
+  var stringDate = new Date(user.birDate); 
   user.provider = 'local';
   user.displayName = user.firstName + ' ' + user.lastName;
   user.age = getAge(stringDate);
