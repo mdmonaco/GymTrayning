@@ -18,7 +18,18 @@
     vm.usernameRegex = /^(?=[\w.-]+$)(?!.*[._-]{2})(?!\.)(?!.*\.$).{3,34}$/;
     vm.dniRegex = /^[0-9]{8}$/;
     vm.disciplines = getDisciplines();
-  
+
+    $scope.CheckVissibleInputs = function () {
+        $scope.prueba = $scope.vm.credentials.roles;
+        if (($scope.vm.credentials.roles == 'admin') || ($scope.vm.credentials.roles == 'user')) {
+          $scope.vissibleAdmin = true;
+          $scope.vissibleClient = false;
+          $scope.vm.credentials.disciplines = " ";
+        } else {
+            $scope.vissibleAdmin = false;
+            $scope.vissibleClient = true;
+        }
+    };
 
     function getDisciplines() {
       UsersService.getArticles()
@@ -29,7 +40,6 @@
     }
 
     function signup(isValid) {
-
       if (!isValid) {
         $scope.$broadcast('show-errors-check-validity', 'vm.userForm');
 
