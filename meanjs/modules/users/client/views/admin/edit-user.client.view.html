@@ -20,12 +20,15 @@
           </div>
         </div>
         <div class="form-group" show-errors>
-          <label class="control-label" for="roles">Roles</label>
-          <div class="controls">
-            <input class="form-control" type="text" name="roles" ng-model="vm.user.roles" id="roles" ng-list required />
-            <div ng-messages="vm.userForm.roles.$error" role="alert">
-              <p class="help-block error-text" ng-message="required">At least one role is required.</p>
-            </div>
+          <label for="roles">Rol</label>
+          <select name="roles" id="roles" name="roles" class="form-control" ng-model="vm.user.roles" ng-list size= lowercase required>
+            <option value="">--- Seleccionar ---</option>
+            <option value="admin">Admin</option>
+            <option value="user">Empleado</option>
+            <option value="client">Cliente</option>
+          </select>
+          <div ng-messages="vm.userForm.roles.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Al menos un rol es requerido.</p>
           </div>
         </div>
         <div class="form-group">
