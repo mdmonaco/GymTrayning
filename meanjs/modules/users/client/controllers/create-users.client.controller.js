@@ -25,6 +25,8 @@
           $scope.vissibleAdmin = true;
           $scope.vissibleClient = false;
           $scope.vm.credentials.disciplines = ' ';
+          $scope.vm.credentials.username = '';
+
         } else {
             $scope.vissibleAdmin = false;
             $scope.vissibleClient = true;
@@ -46,6 +48,7 @@
     } 
 
     function signup(isValid) {
+      $scope.vm.credentials.username = $scope.vm.credentials.dni;
       if (!isValid) {
         $scope.$broadcast('show-errors-check-validity', 'vm.userForm');
 
