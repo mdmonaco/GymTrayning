@@ -39,6 +39,9 @@ exports.signup = function (req, res) {
   user.provider = 'local';
   user.displayName = user.firstName + ' ' + user.lastName;
   user.age = getAge(stringDate);
+  if (user.roles == 'client') {
+    user.username = user.dni;
+  } 
 
 
   // Then save the user

@@ -43,12 +43,7 @@
         });
     }
 
-    function isClient() {
-      return $scope.vm.credentials.roles == 'client'
-    } 
-
     function signup(isValid) {
-      $scope.vm.credentials.username = $scope.vm.credentials.dni;
       if (!isValid) {
         $scope.$broadcast('show-errors-check-validity', 'vm.userForm');
 
