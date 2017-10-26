@@ -24,12 +24,14 @@
         if (($scope.vm.credentials.roles == 'admin') || ($scope.vm.credentials.roles == 'user')) {
           $scope.vissibleAdmin = true;
           $scope.vissibleClient = false;
-          $scope.vm.credentials.disciplines = " ";
+          $scope.vm.credentials.disciplines = ' ';
         } else {
             $scope.vissibleAdmin = false;
             $scope.vissibleClient = true;
+            //$scope.vm.credentials.username = $scope.vm.credentials.dni;
+            //$scope.vm.credentials.password = 'Mario123..';
         }
-    };
+    }
 
     function getDisciplines() {
       UsersService.getArticles()
@@ -38,6 +40,10 @@
         }, function (error) {
         });
     }
+
+    function isClient() {
+      return $scope.vm.credentials.roles == 'client'
+    } 
 
     function signup(isValid) {
       if (!isValid) {
