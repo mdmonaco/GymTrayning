@@ -7,11 +7,11 @@
 
   menuConfig.$inject = ['menuService'];
 
-  function menuConfig(menuService) {
+  // function menuConfig(menuService) {
     // Set top bar menu items
-    menuService.addMenuItem('topbar', {
-      title: 'Chat',
-      state: 'chat'
-    });
-  }
+    // menuService.addMenuItem('topbar', {
+      // title: 'Chat',
+      // state: 'chat'
+    // });
+  // }
 }());

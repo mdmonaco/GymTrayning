@@ -11,8 +11,9 @@
         <span ng-if="article.user" ng-bind="article.user.displayName"></span>
         <span ng-if="!article.user">Deleted User</span>
       </small>
-      <h4 class="list-group-item-heading" ng-bind="article.title"></h4>
-      <p class="list-group-item-text" ng-bind="article.content"></p>
+      <h4 class="list-group-item-heading" data-ng-bind="article.title"></h4>
+      $ <span class="list-group-item-heading" data-ng-bind="article.price"></span>
+      <p class="list-group-item-text" data-ng-bind="article.content"></p>
     </a>
   </div>
 </section>
