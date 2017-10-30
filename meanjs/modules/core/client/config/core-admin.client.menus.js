@@ -12,7 +12,7 @@
       title: 'Admiministrar',
       state: 'admin',
       type: 'dropdown',
-      roles: ['admin']
+      roles: ['admin', 'user']
     });
   }
 }());
