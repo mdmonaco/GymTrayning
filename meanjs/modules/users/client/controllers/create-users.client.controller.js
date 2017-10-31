@@ -19,8 +19,7 @@
     vm.dniRegex = /^[0-9]{8}$/;
     vm.disciplines = getDisciplines();
 
-    $scope.CheckVissibleInputs = function () {
-        $scope.prueba = $scope.vm.credentials.roles;
+    $scope.CheckVissibleInputs = function () {       
         if (($scope.vm.credentials.roles == 'admin') || ($scope.vm.credentials.roles == 'user')) {
           $scope.vissibleAdmin = true;
           $scope.vissibleClient = false;
@@ -72,6 +71,14 @@
     init();
 
     function init() {
+      if (vm.authentication.user.roles == 'user') {
+        $scope.showRoles = false;
+        $scope.vissibleClient = true;
+        return true;
+      } else {
+        $scope.showRoles = true;
+        return false;
+      }
     }
   }
 })();

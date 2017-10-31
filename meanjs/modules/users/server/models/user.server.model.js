@@ -132,7 +132,7 @@ var UserSchema = new Schema({
       type: String,
       enum: possibleRoles
     }],
-    default: ['user'],
+    default: ['client'],
     required: 'Please provide at least one role'
   },
   updated: {
