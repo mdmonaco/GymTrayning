@@ -5,9 +5,9 @@
     .module('users.admin')
     .controller('UserController', UserController);
 
-  UserController.$inject = ['$scope', '$state', '$window', 'Authentication', 'userResolve', 'Notification'];
+  UserController.$inject = ['$scope', '$state', '$window', 'Authentication', 'userResolve', 'Notification', 'UsersService'];
 
-  function UserController($scope, $state, $window, Authentication, user, Notification) {
+  function UserController($scope, $state, $window, Authentication, user, Notification, UsersService) {
     var vm = this;
 
     vm.authentication = Authentication;
@@ -15,6 +15,35 @@
     vm.remove = remove;
     vm.update = update;
     vm.isContextUserSelf = isContextUserSelf;
+    vm.user.birDate = new Date(vm.user.birDate);
+
+
+    vm.disciplines = getDisciplines();
+
+    function getDisciplines() {
+      UsersService.getArticles()
+        .then(function (response) {
+          vm.disciplines = response;
+        }, function (error) {
+        });
+    }
+
+    $scope.CheckVissibleInputs = function () {       
+        if (($scope.vm.user.roles == 'admin') || ($scope.vm.user.roles == 'user')) {
+          $scope.vissibleAdmin = true;
+          $scope.vissibleClient = false;
+          $scope.vm.user.disciplines = ' ';
+          $scope.vm.user.username = '';
+
+        } else {
+            $scope.vissibleAdmin = false;
+            $scope.vissibleClient = true;
+            $scope.vm.user.username = vm.user.dni;
+            $scope.vm.user.password = '';
+            //$scope.vm.credentials.username = $scope.vm.credentials.dni;
+            //$scope.vm.credentials.password = 'Mario123..';
+        }
+    }
 
 
 
@@ -55,6 +84,19 @@
 
     function isContextUserSelf() {
       return vm.user.username === vm.authentication.user.username;
+    }
+    init(); 
+
+    function init () {
+      if (vm.authentication.user.roles == 'admin') {
+        $scope.showRoles = true;
+      } 
+      if (vm.user.roles == 'client') {
+        $scope.vissibleClient = true;
+      } else {
+        $scope.vissibleAdmin = true;
+        $scope.vissiblePass = false;
+      }
     }
   }
 }());
