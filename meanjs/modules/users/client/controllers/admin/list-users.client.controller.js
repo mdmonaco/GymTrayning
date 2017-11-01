@@ -5,17 +5,31 @@
     .module('users.admin')
     .controller('UserListController', UserListController);
 
-  UserListController.$inject = ['$scope', '$filter', 'AdminService'];
+  UserListController.$inject = ['$scope', '$filter', 'AdminService', 'Authentication'];
 
-  function UserListController($scope, $filter, AdminService) {
+  function UserListController($scope, $filter, AdminService, Authentication) {
     var vm = this;
+    vm.authentication = Authentication;
     vm.buildPager = buildPager;
     vm.figureOutItemsToDisplay = figureOutItemsToDisplay;
     vm.pageChanged = pageChanged;
+    var i = 0;
+    var temp = [];
 
     AdminService.query(function (data) {
       vm.users = data;
-      vm.buildPager();
+      if (vm.authentication.user.roles == 'admin') {
+        vm.buildPager();  
+      } else {
+        for (i = 0; i < vm.users.length; i++) {
+          if (vm.users[i].roles == 'client') {
+            temp.push(vm.users[i]);
+          }
+        }
+        vm.users.length = 0;
+        vm.users = temp;
+        vm.buildPager();  
+      }
     });
 
     function buildPager() {
@@ -38,5 +52,6 @@
     function pageChanged() {
       vm.figureOutItemsToDisplay();
     }
+
   }
 }());
