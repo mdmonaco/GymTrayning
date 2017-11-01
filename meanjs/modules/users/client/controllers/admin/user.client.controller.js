@@ -12,10 +12,11 @@
 
     vm.authentication = Authentication;
     vm.user = user;
+    vm.user.birDate = new Date(vm.user.birDate);
     vm.remove = remove;
     vm.update = update;
     vm.isContextUserSelf = isContextUserSelf;
-    vm.user.birDate = new Date(vm.user.birDate);
+    
 
 
     vm.disciplines = getDisciplines();

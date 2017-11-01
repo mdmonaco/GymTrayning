@@ -9,6 +9,19 @@ var path = require('path'),
   Article = mongoose.model('Article'),
   errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller'));
 
+
+// Calculate Age
+function getAge(dateString) {
+  var today = new Date();
+  var birthDate = new Date(dateString);
+  var age = today.getFullYear() - birthDate.getFullYear();
+  var m = today.getMonth() - birthDate.getMonth();
+  if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+    age--;
+  }
+  return age;
+}
+
 /**
  * Show the current user
  */
@@ -33,7 +46,8 @@ exports.update = function (req, res) {
   user.roles = req.body.roles;
   user.dni = req.body.dni;
   user.phone = req.body.phone;
-  user.birDate = req.body.birDate;
+  user.birDate = new Date(req.body.birDate);
+  user.age = getAge(user.birDate);
 
   user.save(function (err) {
     if (err) {
