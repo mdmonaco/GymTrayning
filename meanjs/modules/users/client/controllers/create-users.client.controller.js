@@ -19,6 +19,8 @@
     vm.dniRegex = /^[0-9]{8}$/;
     vm.disciplines = getDisciplines();
 
+    console.log($scope.vm.user.roles);
+
     $scope.CheckVissibleInputs = function () {       
         if (($scope.vm.credentials.roles == 'admin') || ($scope.vm.credentials.roles == 'user')) {
           $scope.vissibleAdmin = true;

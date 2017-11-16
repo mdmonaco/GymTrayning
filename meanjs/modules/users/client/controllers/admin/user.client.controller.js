@@ -5,19 +5,19 @@
     .module('users.admin')
     .controller('UserController', UserController);
 
-  UserController.$inject = ['$scope', '$state', '$window', 'Authentication', 'userResolve', 'Notification', 'UsersService'];
+  UserController.$inject = ['$scope', '$state', '$window', 'Authentication', 'userResolve', 'Notification', 'UsersService', 'PasswordValidator'];
 
-  function UserController($scope, $state, $window, Authentication, user, Notification, UsersService) {
+  function UserController($scope, $state, $window, Authentication, user, Notification, UsersService, PasswordValidator) {
     var vm = this;
 
     vm.authentication = Authentication;
+    vm.getPopoverMsg = PasswordValidator.getPopoverMsg;
     vm.user = user;
     vm.user.birDate = new Date(vm.user.birDate);
     vm.remove = remove;
     vm.update = update;
     vm.isContextUserSelf = isContextUserSelf;
     
-
 
     vm.disciplines = getDisciplines();
 
@@ -29,7 +29,7 @@
         });
     }
 
-    $scope.CheckVissibleInputs = function () {       
+    $scope.CheckVissibleInputs = function () {    
         if (($scope.vm.user.roles == 'admin') || ($scope.vm.user.roles == 'user')) {
           $scope.vissibleAdmin = true;
           $scope.vissibleClient = false;
@@ -46,7 +46,11 @@
         }
     }
 
-
+    $scope.cancel = function () {
+      $state.go('admin.user', {
+          userId: user._id
+      });
+    }
 
     function remove(user) {
       if ($window.confirm('Are you sure you want to delete this user?')) {
@@ -67,6 +71,7 @@
     function update(isValid) {
       if (!isValid) {
         $scope.$broadcast('show-errors-check-validity', 'vm.userForm');
+
 
         return false;
       }

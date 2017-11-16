@@ -1,6 +1,6 @@
 <section>
   <div class="page-header">
-    <h1>User <span ng-bind="vm.user.username"></span></h1>
+    <h1>Usuario <span ng-bind="vm.user.displayName"></span></h1>
   </div>
   <div class="col-md-12">
     <form name="vm.userForm" ng-submit="vm.update(vm.userForm.$valid)" novalidate>
@@ -82,9 +82,9 @@
             </div>    
           </div>
         </div>    
-        <div class="form-group" show-errors  ng-show=vissiblePass class="ng-hide">
+        <div class="form-group" show-errors  ng-show=vissibleAdmin class="ng-hide">
           <label for="password">Contraseña</label>
-            <input type="password" id="password" name="password" class="form-control" ng-model="vm.user.password" placeholder="contraseña" uib-popover="{{vm.getPopoverMsg()}}" popover-trigger="outsideClick" password-validator ng-required="vissiblePass">
+            <input type="password" id="password" name="password" class="form-control" ng-model="vm.user.password" placeholder="contraseña" uib-popover="{{vm.getPopoverMsg()}}" popover-trigger="outsideClick" password-validator ng-required="vissibleAdmin">
           <div ng-messages="vm.userForm.password.$error.ng-required" role="alert">
             <p class="help-block error-text">La contraseña es requerida.</p>
             <div ng-repeat="passwordError in passwordErrors">
@@ -105,12 +105,13 @@
             <p class="help-block error-text">La disciplina es requerida.</p>
           </div>
         </div>
-        <div class="form-group" ng-show="vissiblePass && (vm.userForm.password.$error.requirements || vm.userForm.password.$valid)">
+        <div class="form-group" ng-show="vissibleAdmin && (vm.userForm.password.$error.requirements || vm.userForm.password.$valid)">
           <label>Password Requirements</label>
           <uib-progressbar value="requirementsProgress" type="{{requirementsColor}}"><span style="color:white; white-space:nowrap;">{{requirementsProgress}}%</span></uib-progressbar>
         </div>
         <div class="text-center form-group">
           <button type="submit" class="btn btn-primary">Save Profile</button>
+          <button type="button" ng-click="cancel()" class="btn btn-primary">Cancelar</button>
         </div>
       </fieldset>
     </form>
