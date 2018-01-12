@@ -16,17 +16,16 @@
       roles: ['*']
     });
 
-    // Add the dropdown list item
-    menuService.addSubMenuItem('topbar', 'cobros', {
-      title: 'List Cobros',
-      state: 'cobros.list'
-    });
-
     // Add the dropdown create item
     menuService.addSubMenuItem('topbar', 'cobros', {
-      title: 'Create Cobro',
-      state: 'cobros.create',
-      roles: ['user']
+      title: 'Nuevo cobro',
+      state: 'cobros.create'
+    });
+
+    // Add the dropdown list item
+    menuService.addSubMenuItem('topbar', 'cobros', {
+      title: 'Historial de cobros',
+      state: 'cobros.list'
     });
   }
 }());

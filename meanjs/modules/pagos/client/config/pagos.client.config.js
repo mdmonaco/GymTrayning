@@ -12,21 +12,22 @@
     menuService.addMenuItem('topbar', {
       title: 'Pagos',
       state: 'pagos',
-      type: 'type',
+      type: 'dropdown',
       roles: ['*']
-    });
-
-    // Add the dropdown list item
-    menuService.addSubMenuItem('topbar', 'pagos', {
-      title: 'List Pagos',
-      state: 'pagos.list'
     });
 
     // Add the dropdown create item
     menuService.addSubMenuItem('topbar', 'pagos', {
-      title: 'Create Pago',
+      title: 'Nuevo pago',
       state: 'pagos.create',
-      roles: ['user']
+//      roles: ['user']
     });
+  
+    // Add the dropdown list item
+    menuService.addSubMenuItem('topbar', 'pagos', {
+      title: 'Historial de pagos',
+      state: 'pagos.list'
+    });
+    
   }
 }());
