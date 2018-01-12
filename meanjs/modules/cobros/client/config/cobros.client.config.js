@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('pagos')
+    .module('cobros')
     .run(menuConfig);
 
   menuConfig.$inject = ['menuService'];
@@ -10,22 +10,22 @@
   function menuConfig(menuService) {
     // Set top bar menu items
     menuService.addMenuItem('topbar', {
-      title: 'Pagos',
-      state: 'pagos',
-      type: 'type',
+      title: 'Cobros',
+      state: 'cobros',
+      type: 'dropdown',
       roles: ['*']
     });
 
     // Add the dropdown list item
-    menuService.addSubMenuItem('topbar', 'pagos', {
-      title: 'List Pagos',
-      state: 'pagos.list'
+    menuService.addSubMenuItem('topbar', 'cobros', {
+      title: 'List Cobros',
+      state: 'cobros.list'
     });
 
     // Add the dropdown create item
-    menuService.addSubMenuItem('topbar', 'pagos', {
-      title: 'Create Pago',
-      state: 'pagos.create',
+    menuService.addSubMenuItem('topbar', 'cobros', {
+      title: 'Create Cobro',
+      state: 'cobros.create',
       roles: ['user']
     });
   }
