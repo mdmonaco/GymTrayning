@@ -27,8 +27,8 @@
         if ((vm.credentials.roles == 'admin') || (vm.credentials.roles == 'user')) {
           $scope.vissibleAdmin = true;
           $scope.vissibleClient = false;
-          vm.credentials.roles.disciplines = ' ';
-          vm.credentials.roles.username = '';
+          vm.credentials.disciplines = ' ';
+          vm.credentials.username = '';
 
         } else {
             $scope.vissibleAdmin = false;

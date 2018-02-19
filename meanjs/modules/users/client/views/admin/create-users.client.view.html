@@ -49,8 +49,8 @@
         <div class="form-group" show-errors>
           <label for="gender">Sexo</label></br>
           <form action="">
-            <input type="radio" id="gender" name="gender" ng-model="vm.credentials.gender" value="hombre" required>Hombre<br>
-             <input type="radio" id="gender" name="gender" ng-model="vm.credentials.gender" value="Mujer" required>Mujer<br>
+            <input type="radio" id="hombre" name="hombre" ng-model="vm.credentials.gender" value="hombre" required>Hombre<br>
+             <input type="radio" id="mujer" name="mujer" ng-model="vm.credentials.gender" value="Mujer" required>Mujer<br>
           </form>
           <div ng-messages="vm.userForm.gender.$error" role="alert">
             <p class="help-block error-text" ng-message="required">El sexo es requerido.</p>
@@ -79,9 +79,9 @@
             <p class="help-block error-text">El usuario es requerido.</p>
             <div ng-messages="vm.userForm.username.$error" role="alert">
               <p class="help-block error-text" ng-message="pattern">Ingrese un usuario valido: 3+ caracteres, no caracteres especiales, sin puntos consecutivos, que no empiece ni termine con punto, letras de la a-z y numeros de 0-9.</p>
-            </div>    
+            </div>
           </div>
-        </div>    
+        </div>
         <div class="form-group" show-errors  ng-show=vissibleAdmin class="ng-hide">
           <label for="password">Contraseña</label>
             <input type="password" id="password" name="password" class="form-control" ng-model="vm.credentials.password" placeholder="contraseña" uib-popover="{{vm.getPopoverMsg()}}" popover-trigger="outsideClick" password-validator ng-required="vissibleAdmin">
