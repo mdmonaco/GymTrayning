@@ -18,21 +18,23 @@
     vm.usernameRegex = /^(?=[\w.-]+$)(?!.*[._-]{2})(?!\.)(?!.*\.$).{3,34}$/;
     vm.dniRegex = /^[0-9]{8}$/;
     vm.disciplines = getDisciplines();
+    vm.credentials = {
+      roles: null,
 
-    console.log($scope.vm.user.roles);
+    }
 
-    $scope.CheckVissibleInputs = function () {       
-        if (($scope.vm.credentials.roles == 'admin') || ($scope.vm.credentials.roles == 'user')) {
+    $scope.CheckVissibleInputs = function () {
+        if ((vm.credentials.roles == 'admin') || (vm.credentials.roles == 'user')) {
           $scope.vissibleAdmin = true;
           $scope.vissibleClient = false;
-          $scope.vm.credentials.disciplines = ' ';
-          $scope.vm.credentials.username = '';
+          vm.credentials.roles.disciplines = ' ';
+          vm.credentials.roles.username = '';
 
         } else {
             $scope.vissibleAdmin = false;
             $scope.vissibleClient = true;
-            //$scope.vm.credentials.username = $scope.vm.credentials.dni;
-            //$scope.vm.credentials.password = 'Mario123..';
+            //vm.authentication.user.username = vm.authentication.credentials.dni;
+            //vm.authentication.credentials.password = 'Mario123..';
         }
     }
 
