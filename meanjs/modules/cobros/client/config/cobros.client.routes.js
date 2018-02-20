@@ -24,7 +24,7 @@
         }
       })
       .state('cobroscreate', {
-        url: '/create',
+        url: '/createcobro',
         templateUrl: 'modules/cobros/client/views/form-cobro.client.view.html',
         controller: 'CobrosController',
         controllerAs: 'vm',

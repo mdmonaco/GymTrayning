@@ -8,11 +8,11 @@
 
   CobrosController.$inject = ['$scope', '$state', '$window', 'Authentication', 'cobroResolve'];
 
-  function CobrosController ($scope, $state, $window, Authentication, cobro) {
+  function CobrosController ($scope, $state, $window, Authentication, cobroResolve) {
     var vm = this;
 
     vm.authentication = Authentication;
-    vm.cobro = cobro;
+    vm.cobro = cobroResolve;
     vm.error = null;
     vm.form = {};
     vm.remove = remove;

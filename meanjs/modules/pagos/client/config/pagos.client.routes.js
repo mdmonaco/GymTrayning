@@ -24,7 +24,7 @@
         }
       })
       .state('pagoscreate', {
-        url: '/create',
+        url: '/createpago',
         templateUrl: 'modules/pagos/client/views/form-pago.client.view.html',
         controller: 'PagosController',
         controllerAs: 'vm',
