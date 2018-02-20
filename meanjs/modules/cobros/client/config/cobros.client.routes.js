@@ -14,8 +14,8 @@
         url: '/cobros',
         template: '<ui-view/>'
       })
-      .state('cobros.list', {
-        url: '',
+      .state('cobroslist', {
+        url: '/cobroslist',
         templateUrl: 'modules/cobros/client/views/list-cobros.client.view.html',
         controller: 'CobrosListController',
         controllerAs: 'vm',
@@ -23,7 +23,7 @@
           pageTitle: 'Cobros List'
         }
       })
-      .state('cobros.create', {
+      .state('cobroscreate', {
         url: '/create',
         templateUrl: 'modules/cobros/client/views/form-cobro.client.view.html',
         controller: 'CobrosController',
@@ -36,7 +36,7 @@
           pageTitle: 'Cobros Create'
         }
       })
-      .state('cobros.edit', {
+      .state('cobrosedit', {
         url: '/:cobroId/edit',
         templateUrl: 'modules/cobros/client/views/form-cobro.client.view.html',
         controller: 'CobrosController',

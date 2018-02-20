@@ -19,14 +19,14 @@
     // Add the dropdown create item
     menuService.addSubMenuItem('topbar', 'pagos', {
       title: 'Nuevo pago',
-      state: 'pagos.create',
+      state: 'pagoscreate',
 //      roles: ['user']
     });
   
     // Add the dropdown list item
     menuService.addSubMenuItem('topbar', 'pagos', {
       title: 'Historial de pagos',
-      state: 'pagos.list'
+      state: 'pagoslist'
     });
     
   }

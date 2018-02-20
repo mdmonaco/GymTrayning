@@ -14,8 +14,8 @@
         url: '/pagos',
         template: '<ui-view/>'
       })
-      .state('pagos.list', {
-        url: '',
+      .state('pagoslist', {
+        url: '/pagoslist',
         templateUrl: 'modules/pagos/client/views/list-pagos.client.view.html',
         controller: 'PagosListController',
         controllerAs: 'vm',
@@ -23,7 +23,7 @@
           pageTitle: 'Pagos List'
         }
       })
-      .state('pagos.create', {
+      .state('pagoscreate', {
         url: '/create',
         templateUrl: 'modules/pagos/client/views/form-pago.client.view.html',
         controller: 'PagosController',
@@ -36,7 +36,7 @@
           pageTitle: 'Pagos Create'
         }
       })
-      .state('pagos.edit', {
+      .state('pagosedit', {
         url: '/:pagoId/edit',
         templateUrl: 'modules/pagos/client/views/form-pago.client.view.html',
         controller: 'PagosController',
@@ -49,7 +49,7 @@
           pageTitle: 'Edit Pago {{ pagoResolve.name }}'
         }
       })
-      .state('pagos.view', {
+      .state('pagosview', {
         url: '/:pagoId',
         templateUrl: 'modules/pagos/client/views/view-pago.client.view.html',
         controller: 'PagosController',
