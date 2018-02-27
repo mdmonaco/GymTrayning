@@ -14,9 +14,10 @@
         </div>
         <div class="form-group" show-errors>
           <label class="control-label" for="name">Monto</label>
-          <input name="price" type="text" ng-model="vm.pago.price" id="price" class="form-control" placeholder="Monto" required>
+          <input name="price" type="text" ng-model="vm.pago.price" id="price" class="form-control" placeholder="Monto" required ng-pattern="vm.priceRegex">
           <div ng-messages="vm.form.pagoForm.price.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Un monto es requerido</p>
+            <p class="help-block error-text" ng-message="required">El precio es requerido.</p>
+            <p class="help-block error-text" ng-message="pattern">Ingrese un precio valido.</p>
           </div>
         </div>
         <div class="form-group" show-errors>

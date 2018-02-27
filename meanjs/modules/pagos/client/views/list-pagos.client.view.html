@@ -14,9 +14,10 @@
         <span ng-if="!pago.user">Deleted User</span>
       </small>
       <h4 class="list-group-item-heading" ng-bind="pago.name"></h4>
+      <h3 class="list-group-item-heading"><small>$ {{pago.price}}</small></h3>
     </a>
   </div>
   <div class="alert alert-warning text-center" ng-if="vm.pagos.$resolved && !vm.pagos.length">
-    No Pagos yet, why don't you <a ui-sref="pagos.create">create one</a>?
+    No hay pagos registrados, desea <a ui-sref="pagoscreate">crear uno?</a>?
   </div>
 </section>

@@ -12,14 +12,20 @@
       <i class="glyphicon glyphicon-trash"></i>
     </a>
   </div>
+  <div>
+    <h3>Monto:  $ {{vm.pago.price}}</h3>
+  </div>
+  <div>
+    <h3>Descripción:  {{vm.pago.description}}</h3>
+  </div>
   <small>
     <em class="text-muted">
-      Posted on
+      Creado en
       <span ng-bind="vm.pago.created | date:'mediumDate'"></span>
-      by
+      por
       <span ng-if="vm.pago.user"
             ng-bind="vm.pago.user.displayName"></span>
-      <span ng-if="!vm.pago.user">Deleted User</span>
+      <span ng-if="!vm.pago.user">Eliminar pago</span>
     </em>
   </small>
   <p class="lead" ng-bind="vm.pago.content"></p>

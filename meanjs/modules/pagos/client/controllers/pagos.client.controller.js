@@ -6,9 +6,9 @@
     .module('pagos')
     .controller('PagosController', PagosController);
 
-  PagosController.$inject = ['$scope', '$state', '$window', 'Authentication', 'pagoResolve'];
+  PagosController.$inject = ['$scope', '$state', '$window', 'Authentication', 'pagoResolve', 'Notification'];
 
-  function PagosController ($scope, $state, $window, Authentication, pago) {
+  function PagosController ($scope, $state, $window, Authentication, pago, Notification) {
     var vm = this;
 
     vm.authentication = Authentication;
@@ -18,6 +18,7 @@
     vm.form = {};
     vm.remove = remove;
     vm.save = save;
+    vm.priceRegex = (/^[0-9]{0,4}$/);
     
     vm.isAdmin = function () {     
       if (vm.user.roles.indexOf("admin")==-1)
@@ -27,9 +28,19 @@
     }
 
     // Remove existing Pago
+    //function remove() {
+    //  if ($window.confirm('Esta seguro que desea eliminar el pago?')) {
+    //    vm.pago.$remove($state.go('pagoslist'));
+    //  }
+    //}
+
+    // Remove existing Pago
     function remove() {
-      if ($window.confirm('Are you sure you want to delete?')) {
-        vm.pago.$remove($state.go('pagoslist'));
+      if ($window.confirm('Estas seguro que desea eliminar el pago?')) {
+        vm.pago.$remove(function () {
+          Notification.success({ message: '<i class="glyphicon glyphicon-ok"></i> Pago borrado correctamente!' });
+          $state.go('pagoslist');
+        });
       }
     }
 
