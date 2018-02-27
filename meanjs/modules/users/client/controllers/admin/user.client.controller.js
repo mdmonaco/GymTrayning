@@ -53,7 +53,7 @@
     }
 
     function remove(user) {
-      if ($window.confirm('Are you sure you want to delete this user?')) {
+      if ($window.confirm('¿Está seguro de que desea eliminar este usuario?')) {
         if (user) {
           user.$remove();
 

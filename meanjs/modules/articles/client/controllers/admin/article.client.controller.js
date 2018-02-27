@@ -19,7 +19,7 @@
 
     // Remove existing Article
     function remove() {
-      if ($window.confirm('Are you sure you want to delete?')) {
+      if ($window.confirm('¿Está seguro que desea eliminar la Disciplina?')) {
         vm.article.$remove(function () {
           $state.go('admin.articles.list');
           Notification.success({ message: '<i class="glyphicon glyphicon-ok"></i> Article deleted successfully!' });

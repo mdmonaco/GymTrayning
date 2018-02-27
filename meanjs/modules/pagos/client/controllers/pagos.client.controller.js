@@ -36,7 +36,7 @@
 
     // Remove existing Pago
     function remove() {
-      if ($window.confirm('Estas seguro que desea eliminar el pago?')) {
+      if ($window.confirm('¿Está seguro que desea eliminar el pago?')) {
         vm.pago.$remove(function () {
           Notification.success({ message: '<i class="glyphicon glyphicon-ok"></i> Pago borrado correctamente!' });
           $state.go('pagoslist');

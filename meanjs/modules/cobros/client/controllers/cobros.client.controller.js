@@ -20,7 +20,7 @@
 
     // Remove existing Cobro
     function remove() {
-      if ($window.confirm('Are you sure you want to delete?')) {
+      if ($window.confirm('¿Está seguro que desea eliminar la Disciplina?')) {
         vm.cobro.$remove($state.go('cobros.list'));
       }
     }

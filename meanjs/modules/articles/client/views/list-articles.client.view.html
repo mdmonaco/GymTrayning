@@ -5,9 +5,9 @@
   <div class="list-group">
     <a ng-repeat="article in vm.articles" ui-sref="articles.view({ articleId: article._id })" class="list-group-item">
       <small class="list-group-item-text">
-        Posted on
+        Disciplina creada
         <span ng-bind="article.created | date:'mediumDate'"></span>
-        by
+        por
         <span ng-if="article.user" ng-bind="article.user.displayName"></span>
         <span ng-if="!article.user">Deleted User</span>
       </small>
