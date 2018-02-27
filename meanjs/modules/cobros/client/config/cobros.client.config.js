@@ -13,19 +13,21 @@
       title: 'Cobros',
       state: 'cobros',
       type: 'dropdown',
-      roles: ['*']
+      roles: ['user', 'admin']
     });
 
     // Add the dropdown create item
     menuService.addSubMenuItem('topbar', 'cobros', {
       title: 'Nuevo cobro',
-      state: 'cobroscreate'
+      state: 'cobroscreate',
+      roles: ['user', 'admin']
     });
 
     // Add the dropdown list item
     menuService.addSubMenuItem('topbar', 'cobros', {
       title: 'Historial de cobros',
-      state: 'cobroslist'
+      state: 'cobroslist',
+      roles: ['user', 'admin']
     });
   }
 }());

@@ -13,20 +13,21 @@
       title: 'Pagos',
       state: 'pagos',
       type: 'dropdown',
-      roles: ['*']
+      roles: ['user', 'admin']
     });
 
     // Add the dropdown create item
     menuService.addSubMenuItem('topbar', 'pagos', {
       title: 'Nuevo pago',
       state: 'pagoscreate',
-//      roles: ['user']
+      roles: ['user', 'admin']
     });
   
     // Add the dropdown list item
     menuService.addSubMenuItem('topbar', 'pagos', {
       title: 'Historial de pagos',
-      state: 'pagoslist'
+      state: 'pagoslist',
+      roles: ['user', 'admin']
     });
     
   }
