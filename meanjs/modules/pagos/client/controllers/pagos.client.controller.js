@@ -12,16 +12,24 @@
     var vm = this;
 
     vm.authentication = Authentication;
+    vm.user = vm.authentication.user;
     vm.pago = pago;
     vm.error = null;
     vm.form = {};
     vm.remove = remove;
     vm.save = save;
+    
+    vm.isAdmin = function () {     
+      if (vm.user.roles.indexOf("admin")==-1)
+        return false
+      else
+        return true
+    }
 
     // Remove existing Pago
     function remove() {
       if ($window.confirm('Are you sure you want to delete?')) {
-        vm.pago.$remove($state.go('pagos.list'));
+        vm.pago.$remove($state.go('pagoslist'));
       }
     }
 
@@ -40,9 +48,7 @@
       }
 
       function successCallback(res) {
-        $state.go('pagos.view', {
-          pagoId: res._id
-        });
+        $state.go('pagoslist');
       }
 
       function errorCallback(res) {

@@ -3,9 +3,9 @@
     <h1 ng-bind="vm.pago.name"></h1>
   </div>
   <div class="pull-right"
-       ng-show="vm.pago.isCurrentUserOwner">
+       ng-show="vm.pago.isCurrentUserOwner || vm.isAdmin()">
     <a class="btn btn-primary"
-       ui-sref="pagos.edit({ pagoId: vm.pago._id })">
+       ui-sref="pagosedit({ pagoId: vm.pago._id })">
       <i class="glyphicon glyphicon-edit"></i>
     </a>
     <a class="btn btn-primary" ng-click="vm.remove()">

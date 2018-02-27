@@ -15,7 +15,7 @@ var path = require('path'),
 exports.create = function(req, res) {
   var pago = new Pago(req.body);
   pago.user = req.user;
-
+ 
   pago.save(function(err) {
     if (err) {
       return res.status(400).send({

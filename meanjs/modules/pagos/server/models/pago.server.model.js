@@ -13,7 +13,7 @@ var PagoSchema = new Schema({
   name: {
     type: String,
     default: '',
-    required: 'Please fill Pago name',
+    required: 'Por favor ingrese un titulo',
     trim: true
   },
   created: {
@@ -23,6 +23,16 @@ var PagoSchema = new Schema({
   user: {
     type: Schema.ObjectId,
     ref: 'User'
+  },
+  price: {
+    type: String,
+    default: 0,
+    required: "Por favor ingrese un monto"
+  },
+  description: {
+    type: String,
+    default: '',
+    required: "Por favor ingrese una descripción"
   }
 });
 

@@ -4,12 +4,12 @@
   </div>
   <div class="list-group">
     <a ng-repeat="pago in vm.pagos"
-       ui-sref="pagos.view({ pagoId: pago._id })"
+       ui-sref="pagosview({ pagoId: pago._id })"
        class="list-group-item">
       <small class="list-group-item-text">
-        Posted on
+        Pago realizado
         <span ng-bind="pago.created | date:'mediumDate'"></span>
-        by
+        por
         <span ng-if="pago.user" ng-bind="pago.user.displayName"></span>
         <span ng-if="!pago.user">Deleted User</span>
       </small>

@@ -37,7 +37,7 @@
         }
       })
       .state('pagosedit', {
-        url: '/:pagoId/edit',
+        url: '/:pagoId/pagosedit',
         templateUrl: 'modules/pagos/client/views/form-pago.client.view.html',
         controller: 'PagosController',
         controllerAs: 'vm',

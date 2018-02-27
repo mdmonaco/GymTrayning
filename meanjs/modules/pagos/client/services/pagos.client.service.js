@@ -9,7 +9,7 @@
   PagosService.$inject = ['$resource'];
 
   function PagosService($resource) {
-    return $resource('api/pagos/:pagoId', {
+    return $resource('/api/pagos/:pagoId', {
       pagoId: '@_id'
     }, {
       update: {
