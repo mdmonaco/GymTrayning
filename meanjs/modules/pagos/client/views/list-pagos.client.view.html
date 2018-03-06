@@ -1,11 +1,25 @@
 <section>
   <div class="page-header">
-    <h1>Historial de Pagos</h1>
+    <div class="row">
+      <div class="col-md-4">
+        <h1>Historial de Pagos</h1>
+      </div>
+      <div class="col-md-1" style="margin-top: 2em">
+        <h4>Desde :</h4>
+      </div>
+      <div class="col-md-2" style="margin-top: 2em">
+        <input class="form-control" type="date" ng-model="vm.search" placeholder="Buscar" ng-change="vm.figureOutItemsToDisplay()" />
+      </div>
+      <div class="col-md-1" style="margin-top: 2em">
+        <h4>Hasta :</h4>
+      </div>
+      <div class="col-md-2" style="margin-top: 2em">
+        <input class="form-control" type="date" ng-model="vm.searchTo" placeholder="Buscar" ng-change="vm.figureOutItemsToDisplay()" />
+      </div>
+    </div>
   </div>
   <div class="list-group">
-    <a ng-repeat="pago in vm.pagos"
-       ui-sref="pagosview({ pagoId: pago._id })"
-       class="list-group-item">
+    <a ng-repeat="pago in vm.pagedItems" ui-sref="pagosview({ pagoId: pago._id })" class="list-group-item">
       <small class="list-group-item-text">
         Pago realizado
         <span ng-bind="pago.created | date:'mediumDate'"></span>
@@ -20,4 +34,5 @@
   <div class="alert alert-warning text-center" ng-if="vm.pagos.$resolved && !vm.pagos.length">
     No hay pagos registrados, desea <a ui-sref="pagoscreate">crear uno?</a>?
   </div>
+  <uib-pagination boundary-links="true" max-size="8" items-per-page="vm.itemsPerPage" total-items="vm.filterLength" ng-model="vm.currentPage" ng-change="vm.pageChanged()"></uib-pagination>
 </section>
