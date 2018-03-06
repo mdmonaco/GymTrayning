@@ -12,7 +12,10 @@
       .state('cobros', {
         abstract: true,
         url: '/cobros',
-        template: '<ui-view/>'
+        template: '<ui-view/>',
+        data: {
+          roles: ['user', 'admin']
+        }
       })
       .state('cobroslist', {
         url: '/cobroslist',
@@ -20,7 +23,8 @@
         controller: 'CobrosListController',
         controllerAs: 'vm',
         data: {
-          pageTitle: 'Cobros List'
+          pageTitle: 'Cobros List',
+          roles: ['user', 'admin']
         }
       })
       .state('cobroscreate', {
@@ -58,7 +62,8 @@
           cobroResolve: getCobro
         },
         data: {
-          pageTitle: 'Cobro {{ cobroResolve.name }}'
+          pageTitle: 'Cobro {{ cobroResolve.name }}',
+          roles: ['user', 'admin']
         }
       });
   }

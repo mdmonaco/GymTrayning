@@ -12,7 +12,10 @@
       .state('pagos', {
         abstract: true,
         url: '/pagos',
-        template: '<ui-view/>'
+        template: '<ui-view/>',
+        data: {
+          roles: ['user', 'admin']
+        }
       })
       .state('pagoslist', {
         url: '/pagoslist',
@@ -20,7 +23,8 @@
         controller: 'PagosListController',
         controllerAs: 'vm',
         data: {
-          pageTitle: 'Pagos List'
+          pageTitle: 'Pagos List',
+          roles: ['user', 'admin']
         }
       })
       .state('pagoscreate', {
@@ -58,7 +62,8 @@
           pagoResolve: getPago
         },
         data: {
-          pageTitle: 'Pago {{ pagoResolve.name }}'
+          pageTitle: 'Pago {{ pagoResolve.name }}',
+          roles: ['user', 'admin']
         }
       });
   }
